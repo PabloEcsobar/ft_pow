@@ -10,6 +10,7 @@
                 "approximation.c",
                 "tools.c",
                 "ft_pow.c",
+                "test.c",
                 "-o",
                 "${fileDirname}/${fileBasenameNoExtension}",
                 "-lm"

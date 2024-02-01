@@ -6,7 +6,7 @@
 /*   By: blackrider <blackrider@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/01 14:39:21 by blackrider        #+#    #+#             */
-/*   Updated: 2024/02/01 14:53:57 by blackrider       ###   ########.fr       */
+/*   Updated: 2024/02/01 15:06:18 by blackrider       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,6 @@ double	approx_one(double num, int deg)
 double	approx_pow(double num, int deg)
 {
 	double	res;
-	double	tmp;
 
 	deg = ft_abs(deg);
 	num = ft_abs(num);
