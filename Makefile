@@ -1,9 +1,14 @@
 NAME = libft_pow.a
+NAME_TEST = ft_pow
+TESTFILE = app
 SRC = ft_pow.c tools.c approximation.c
+SRCTEST = app.c
 OBJDIR = objs
 OBJ = $(SRC:%.c=$(OBJDIR)/%.o)
+# OBJTEST = $(SRCTEST:%.c=$(OBJDIR)/%.o)
 CC = gcc
 CFLAGSO = -Wall -Wextra -Werror -c
+LFLAGS = -L. -lft_pow
 
 .PHONY: all, clean, fclean, re
 
@@ -17,10 +22,16 @@ $(OBJDIR)/%.o: %.c
 	@mkdir -p $(OBJDIR)
 	$(CC) $(CFLAGSO) $< -o $@
 
+$(NAME_TEST): all
+	$(CC) -o $@ app.c $(LFLAGS)
+
 clean:
 	rm -rf $(OBJDIR)
 
 fclean: clean
-	rm -f $(NAME)
+	rm -f $(NAME) $(NAME_TEST)
 
 re: fclean all
+
+run: $(NAME_TEST)
+	./$(NAME_TEST)
