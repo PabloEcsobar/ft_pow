@@ -6,11 +6,11 @@
 /*   By: blackrider <blackrider@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/01 14:39:21 by blackrider        #+#    #+#             */
-/*   Updated: 2024/02/01 14:45:34 by blackrider       ###   ########.fr       */
+/*   Updated: 2024/02/01 14:53:57 by blackrider       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_pow_sqrt.h"
+#include "ft_pow.h"
 
 double	approx_one(double num, int deg)
 {

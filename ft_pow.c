@@ -6,11 +6,11 @@
 /*   By: blackrider <blackrider@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/31 20:24:51 by blackrider        #+#    #+#             */
-/*   Updated: 2024/02/01 14:46:24 by blackrider       ###   ########.fr       */
+/*   Updated: 2024/02/01 14:54:05 by blackrider       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_pow_sqrt.h"
+#include "ft_pow.h"
 #include <stdlib.h>
 #include <stdio.h>
 #include <math.h>
