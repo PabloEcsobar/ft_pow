@@ -6,12 +6,13 @@
 /*   By: blackrider <blackrider@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/31 20:24:51 by blackrider        #+#    #+#             */
-/*   Updated: 2024/02/01 15:09:30 by blackrider       ###   ########.fr       */
+/*   Updated: 2024/02/02 16:07:24 by blackrider       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_pow.h"
 #include <stdlib.h>
+#include <stdio.h>
 
 double	pow_int(double num, int deg)
 {
@@ -51,24 +52,24 @@ double	newtroot(double num, double deg, double approx)
 double	pow_float(double num, double deg)
 {
 	double	root;
-	double	root_deg;
+	double	r_deg;
 
 	if (num < 0)
 		return (0);
-	root_deg = deg - (int)deg;
+	r_deg = deg - (int)deg;
 	root = 1;
-	while (ft_abs(root_deg - round_num(root_deg)) > 0.000000000000001)
+	while (ft_abs(r_deg - round_num(r_deg)) > 0.0000001 && r_deg < 10000000)
 	{
-		root_deg *= 10;
+		r_deg *= 10;
 		root *= 10;
 	}
-	root_deg = round_num(root_deg);
-	if (root / root_deg > 100 || root > 999)
+	r_deg = round_num(r_deg);
+	if (root / r_deg > 100 || root > 999)
 	{
-		root = round_num(root / root_deg);
+		root = round_num(root / r_deg);
 		return (newtroot(num, root, approx_pow(num, root)));
 	}
-	num = pow_int(num, root_deg);
+	num = pow_int(num, r_deg);
 	return (newtroot(num, root, approx_pow(num, root)));
 }
 
@@ -80,6 +81,8 @@ double	ft_pow(double num, double deg)
 		return (num / ft_abs(num));
 	if (!num)
 		return (num);
+	if (num > 0.999999 && num < 1.000001)
+		return (1.0);
 	if (deg - (int)deg < 0.0000000001)
 		return (pow_int(num, (int)deg));
 	if (deg < 1)

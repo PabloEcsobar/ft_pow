@@ -6,7 +6,7 @@
 /*   By: blackrider <blackrider@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/01 14:39:21 by blackrider        #+#    #+#             */
-/*   Updated: 2024/02/01 15:06:18 by blackrider       ###   ########.fr       */
+/*   Updated: 2024/02/02 15:57:18 by blackrider       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,11 +36,11 @@ double	approx_pow(double num, int deg)
 	deg = ft_abs(deg);
 	num = ft_abs(num);
 	res = num / (deg * deg);
-	if (res < 1)
+	if (res <= 1)
 		return (approx_one(num, deg));
 	while (pow_int(res, deg) > num)
 		res /= deg * deg;
-	if (res < 1)
+	if (res <= 1)
 		return (approx_one(num, deg));
 	while (pow_int(res * res, deg) < num)
 		res *= res;
