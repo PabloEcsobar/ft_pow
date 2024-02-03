@@ -6,7 +6,7 @@
 /*   By: blackrider <blackrider@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/01 14:39:21 by blackrider        #+#    #+#             */
-/*   Updated: 2024/02/02 15:57:18 by blackrider       ###   ########.fr       */
+/*   Updated: 2024/02/03 15:41:14 by blackrider       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,8 +21,14 @@ double	approx_one(double num, int deg)
 	res = 1.0 + tmp;
 	while (pow_int(res, deg) > num)
 	{
-		tmp *= 0.4;
-		res -= tmp;
+		if (res > 1)
+			res -= tmp / ((double)deg * num);
+		if (res < 1)
+		{
+			tmp = pow_int((tmp / (num * (double)deg)), deg - 1);
+			tmp /= pow_int(num * (double)deg, deg);
+			res = 1.0 + tmp;
+		}
 	}
 	while (pow_int(res * res, deg) < num)
 		res *= res;

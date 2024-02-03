@@ -6,18 +6,21 @@
 /*   By: blackrider <blackrider@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/01 15:06:58 by blackrider        #+#    #+#             */
-/*   Updated: 2024/02/02 16:00:15 by blackrider       ###   ########.fr       */
+/*   Updated: 2024/02/04 00:56:45 by blackrider       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_pow.h"
 #include <stdio.h>
+#include <limits.h>
+#include <float.h>
+#include <math.h>
 
 double	scatter(int count)
 {
 	const double	b = 1;
 	const double	k = 1.25;
-    const double	m = 0.248;
+	const double	m = 0.248;
 	double			x;
 	double			n;
 
@@ -30,7 +33,8 @@ double	scatter(int count)
 
 int main(void)
 {
-	for (int i = 8; i < 18; ++i)
+	printf("DOUBLE MAX: %f\n10 root of double max: %f\n", __DBL_MAX__, pow(__DBL_MAX__, 0.001));
+	for (int i = 0; i < 1000; ++i)
 		printf ("result[%d]:\t%f\n", i, scatter(i));
 	return (0);
 }

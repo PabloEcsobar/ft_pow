@@ -6,7 +6,7 @@
 /*   By: blackrider <blackrider@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/31 20:24:51 by blackrider        #+#    #+#             */
-/*   Updated: 2024/02/02 16:07:24 by blackrider       ###   ########.fr       */
+/*   Updated: 2024/02/04 00:52:45 by blackrider       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,37 +40,68 @@ double	newtroot(double num, double deg, double approx)
 	double	err;
 
 	prec = (num * deg) / 80000000000;
-	while (ft_abs(num - pow_int(approx, deg)) > prec)
+	tmp = pow_int(approx, deg);
+	while (ft_abs(num - tmp) > prec)
 	{
-		tmp = pow_int(approx, deg);
 		err = num - tmp;
 		approx = approx + err / (deg * tmp / approx);
+		tmp = pow_int(approx, deg);
 	}
 	return (approx);
 }
 
+double	find_nearestr(double num, int root)
+{
+	const double	dec = 10.0;
+	const double	duo = 2.0;
+	double			res;
+	int				tmp;
+
+	tmp = isprime(root);
+	if (root < 20 && tmp)
+		return (newtroot(num, root, approx_pow(num, root)));
+	if (tmp)
+	{
+		res = find_nearestr(num, root / dec);
+		res = newtroot(res, dec / duo, approx_pow(res, dec / duo));
+		return (newtroot(res, duo, approx_pow(res, duo)));
+	}
+	tmp = 2;
+	while (tmp * tmp <= root)
+	{
+		if (root % tmp == 0)
+		{
+			res = find_nearestr(num, root / tmp);
+			return (find_nearestr(res, tmp));
+		}
+		++tmp;
+	}
+	return (-1);
+}
+
 double	pow_float(double num, double deg)
 {
-	double	root;
-	double	r_deg;
+	int		root;
+	int		tmp;
+	double	res;
 
 	if (num < 0)
 		return (0);
-	r_deg = deg - (int)deg;
+	deg = deg - (int)deg;
 	root = 1;
-	while (ft_abs(r_deg - round_num(r_deg)) > 0.0000001 && r_deg < 10000000)
+	res = 1;
+	while (ft_abs(deg - round_num(deg)) > 0.0000001 && root < 1000000)
 	{
-		r_deg *= 10;
+		deg = (deg - (int)deg) * 10;
 		root *= 10;
+		if (ft_abs(deg - round_num(deg)) < 0.000001)
+			++deg;
+		tmp = find_cmndv(deg, root);
+		res *= find_nearestr(pow_int(num, deg / (double)tmp), root / tmp);
 	}
-	r_deg = round_num(r_deg);
-	if (root / r_deg > 100 || root > 999)
-	{
-		root = round_num(root / r_deg);
-		return (newtroot(num, root, approx_pow(num, root)));
-	}
-	num = pow_int(num, r_deg);
-	return (newtroot(num, root, approx_pow(num, root)));
+	if (root > 1000000)
+		return (res * root_av(num, deg, root));
+	return (res);
 }
 
 double	ft_pow(double num, double deg)
