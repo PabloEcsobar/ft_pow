@@ -6,7 +6,7 @@
 /*   By: blackrider <blackrider@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/31 20:24:51 by blackrider        #+#    #+#             */
-/*   Updated: 2024/02/04 00:52:45 by blackrider       ###   ########.fr       */
+/*   Updated: 2024/02/04 00:59:03 by blackrider       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,13 +70,11 @@ double	find_nearestr(double num, int root)
 	while (tmp * tmp <= root)
 	{
 		if (root % tmp == 0)
-		{
-			res = find_nearestr(num, root / tmp);
-			return (find_nearestr(res, tmp));
-		}
+			break ;
 		++tmp;
 	}
-	return (-1);
+	res = find_nearestr(num, root / tmp);
+	return (find_nearestr(res, tmp));
 }
 
 double	pow_float(double num, double deg)
