@@ -6,7 +6,7 @@
 /*   By: blackrider <blackrider@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/01 15:06:58 by blackrider        #+#    #+#             */
-/*   Updated: 2024/02/04 00:56:45 by blackrider       ###   ########.fr       */
+/*   Updated: 2024/02/05 12:27:00 by blackrider       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,24 +18,39 @@
 
 double	scatter(int count)
 {
+	const int		min = 100;
+	const int		max = 9197;
+	const double	f = 2;
 	const double	b = 1;
-	const double	k = 1.25;
-	const double	m = 0.248;
+	const double	k_l = 0.11;
+	const double	k_e = 1.25;
+	const double	n = 0.2485;
 	double			x;
-	double			n;
 
 	if (count < 1)
 		return (0);
-    x = ft_pow((double)count, m);
-    x = ft_pow(2, x);
-	return (k * x + b);
+	if (count < min || count > max)
+		return (b + k_l * count);
+    x = ft_pow((double)count, n);
+    x = ft_pow(f, x);
+	return (k_e * x + b);
+}
+
+int		round_sct(double x)
+{
+	return (round_num(x));
 }
 
 int main(void)
 {
+	double	x;
+
 	printf("DOUBLE MAX: %f\n10 root of double max: %f\n", __DBL_MAX__, pow(__DBL_MAX__, 0.001));
-	for (int i = 0; i < 1000; ++i)
-		printf ("result[%d]:\t%f\n", i, scatter(i));
+	for (int i = 0; i < 9500; ++i)
+	{
+		x = scatter(i);
+		printf ("result[%d]:\t%f\tround result: %d\n", i, x, round_num(x));
+	}
 	return (0);
 }
 
