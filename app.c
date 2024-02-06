@@ -6,7 +6,7 @@
 /*   By: blackrider <blackrider@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/01 15:06:58 by blackrider        #+#    #+#             */
-/*   Updated: 2024/02/05 12:27:00 by blackrider       ###   ########.fr       */
+/*   Updated: 2024/02/06 11:05:47 by blackrider       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,27 +41,27 @@ int		round_sct(double x)
 	return (round_num(x));
 }
 
-int main(void)
-{
-	double	x;
-
-	printf("DOUBLE MAX: %f\n10 root of double max: %f\n", __DBL_MAX__, pow(__DBL_MAX__, 0.001));
-	for (int i = 0; i < 9500; ++i)
-	{
-		x = scatter(i);
-		printf ("result[%d]:\t%f\tround result: %d\n", i, x, round_num(x));
-	}
-	return (0);
-}
-
-// int	main(void)
+// int main(void)
 // {
-// 	double	num;
-// 	double	root;
+// 	double	x;
 
-// 	num = 1.8;
-// 	root = 0.0085;
-// 	printf("result of degree [%f] for number [%f]: %f\n",
-// 		root, num, ft_pow(num, root));
+// 	printf("DOUBLE MAX: %f\n10 root of double max: %f\n", __DBL_MAX__, pow(__DBL_MAX__, 0.001));
+// 	for (int i = 0; i < 9500; ++i)
+// 	{
+// 		x = scatter(i);
+// 		printf ("result[%d]:\t%f\tround result: %d\n", i, x, round_num(x));
+// 	}
 // 	return (0);
 // }
+
+int	main(void)
+{
+	double	num;
+	double	root;
+
+	num = 25;
+	root = 0.5;
+	printf("result of degree [%f] for number [%f]: %f\n",
+		root, num, ft_pow(num, root));
+	return (0);
+}
