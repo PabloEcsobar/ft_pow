@@ -6,7 +6,7 @@
 /*   By: blackrider <blackrider@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/01 14:39:21 by blackrider        #+#    #+#             */
-/*   Updated: 2024/02/06 22:38:27 by blackrider       ###   ########.fr       */
+/*   Updated: 2024/02/06 22:42:40 by blackrider       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,7 +54,7 @@ double	approx_pow(double num, int deg)
 	return (res);
 }
 
-int		*dennum(double num)
+int	*dennum(double num)
 {
 	int	*arr;
 	int	tmp;

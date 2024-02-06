@@ -6,7 +6,7 @@
 /*   By: blackrider <blackrider@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/31 21:00:56 by blackrider        #+#    #+#             */
-/*   Updated: 2024/02/06 22:39:56 by blackrider       ###   ########.fr       */
+/*   Updated: 2024/02/06 22:43:12 by blackrider       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,5 +32,5 @@ double	find_nearestr(double num, int root);
 int		isprime(int x);
 int		find_cmndv(int deg, int root);
 double	root_av(double num, double deg, int root);
-int	    *dennum(double num);
+int		*dennum(double num);
 double	numlesone(double num, double deg);
