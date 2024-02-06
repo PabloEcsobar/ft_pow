@@ -1,4 +1,4 @@
-NAME = libft_pow.a
+NAME = libftpow.a
 NAME_TEST = ft_pow
 TESTFILE = app
 SRC = ft_pow.c tools.c approximation.c
