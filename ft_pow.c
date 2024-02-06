@@ -6,7 +6,7 @@
 /*   By: blackrider <blackrider@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/31 20:24:51 by blackrider        #+#    #+#             */
-/*   Updated: 2024/02/06 11:14:00 by blackrider       ###   ########.fr       */
+/*   Updated: 2024/02/06 22:38:53 by blackrider       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -85,15 +85,17 @@ double	pow_float(double num, double deg)
 
 	if (num < 0)
 		return (0);
+	if (num > 1 - PRECISION && num < 1 + PRECISION)
+		return (1.0);
 	deg = deg - (int)deg;
 	root = 1;
 	res = 1;
-	while (ft_abs(deg - round_num(deg)) > 0.0000001 && root < 1000000)
+	while (ft_abs(deg - round_num(deg)) > PRECISION && root < MAXNUM)
 	{
 		deg = (deg - (int)deg) * 10;
 		root *= 10;
 		tmp = ft_abs(deg - round_num(deg));
-		if (tmp && tmp < 0.000001)
+		if (tmp && tmp < PRECISION)
 			++deg;
 		tmp = find_cmndv(deg, root);
 		res *= find_nearestr(pow_int(num, deg / (double)tmp), root / tmp);
@@ -111,9 +113,11 @@ double	ft_pow(double num, double deg)
 		return (num / ft_abs(num));
 	if (!num)
 		return (num);
-	if (num > 0.999999 && num < 1.000001)
+	if (num > 1.0 - PRECISION && num < 1 + PRECISION)
 		return (1.0);
-	if (deg - (int)deg < 0.0000000001)
+	if (num < 1)
+		return (numlesone(num, deg));
+	if (deg - (int)deg < PRECISION)
 		return (pow_int(num, (int)deg));
 	if (deg < 1)
 		return (pow_float(num, deg));

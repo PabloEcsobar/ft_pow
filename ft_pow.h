@@ -6,7 +6,7 @@
 /*   By: blackrider <blackrider@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/31 21:00:56 by blackrider        #+#    #+#             */
-/*   Updated: 2024/02/04 00:50:52 by blackrider       ###   ########.fr       */
+/*   Updated: 2024/02/06 22:39:56 by blackrider       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,9 @@
 #define MIN_DEV 1
 #define DBL_MAX_ROOT_TEN 6690699980388652205836230197248.0
 #define DBL_MAX_ROOT_HNDR 1209.336485
+#define PRECISION 0.0000001
+#define DEC 10
+#define MAXNUM 1000000
 
 double	ft_pow(double num, double deg);
 double	approx_one(double num, int deg);
@@ -29,3 +32,5 @@ double	find_nearestr(double num, int root);
 int		isprime(int x);
 int		find_cmndv(int deg, int root);
 double	root_av(double num, double deg, int root);
+int	    *dennum(double num);
+double	numlesone(double num, double deg);

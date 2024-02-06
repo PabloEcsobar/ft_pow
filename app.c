@@ -6,7 +6,7 @@
 /*   By: blackrider <blackrider@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/01 15:06:58 by blackrider        #+#    #+#             */
-/*   Updated: 2024/02/06 11:14:31 by blackrider       ###   ########.fr       */
+/*   Updated: 2024/02/06 22:39:22 by blackrider       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,12 +45,16 @@ int main(void)
 {
 	double	x;
 
-	printf("DOUBLE MAX: %f\n10 root of double max: %f\n", __DBL_MAX__, pow(__DBL_MAX__, 0.001));
-	for (int i = 0; i < 500; ++i)
-	{
-		x = scatter(i);
-		printf ("result[%d]:\t%f\tround result: %f\n", i, x, ft_pow(x, 0.248));
-	}
+
+	for (double i = 0; i < 5; i += 0.01)
+		printf("result of ft_pow(%f, %f): %f\n", i, 0.5, ft_pow(i, 0.5));
+
+	// printf("DOUBLE MAX: %f\n10 root of double max: %f\n", __DBL_MAX__, pow(__DBL_MAX__, 0.001));
+	// for (int i = 0; i < 9500; ++i)
+	// {
+	// 	x = scatter(i);
+	// 	printf ("result[%d]:\t%f\tround result: %d\n", i, x, round_num(x));
+	// }
 	return (0);
 }
 

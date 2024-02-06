@@ -6,11 +6,12 @@
 /*   By: blackrider <blackrider@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/01 14:39:21 by blackrider        #+#    #+#             */
-/*   Updated: 2024/02/03 15:41:14 by blackrider       ###   ########.fr       */
+/*   Updated: 2024/02/06 22:38:27 by blackrider       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_pow.h"
+#include <stdlib.h>
 
 double	approx_one(double num, int deg)
 {
@@ -50,5 +51,38 @@ double	approx_pow(double num, int deg)
 		return (approx_one(num, deg));
 	while (pow_int(res * res, deg) < num)
 		res *= res;
+	return (res);
+}
+
+int		*dennum(double num)
+{
+	int	*arr;
+	int	tmp;
+
+	arr = malloc(2 * sizeof(int));
+	if (!arr)
+		return (NULL);
+	arr[1] = 1;
+	while (arr[1] < MAXNUM && ft_abs(num - (int)num) > PRECISION)
+	{
+		num *= DEC;
+		arr[1] *= DEC;
+	}
+	tmp = find_cmndv(num, arr[1]);
+	arr[0] = round_num(num) / tmp;
+	arr[1] = arr[1] / tmp;
+	return (arr);
+}
+
+double	numlesone(double num, double deg)
+{
+	int		*arr;
+	double	res;
+
+	arr = dennum(num);
+	if (!arr)
+		return (-1.0);
+	res = pow_float(arr[0], deg) / pow_float(arr[1], deg);
+	free(arr);
 	return (res);
 }

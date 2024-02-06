@@ -8,7 +8,7 @@ OBJ = $(SRC:%.c=$(OBJDIR)/%.o)
 # OBJTEST = $(SRCTEST:%.c=$(OBJDIR)/%.o)
 CC = gcc
 CFLAGSO = -Wall -Wextra -Werror -c
-LFLAGS = -L. -lft_pow
+LFLAGS = -L. -lftpow
 
 .PHONY: all, clean, fclean, re
 
