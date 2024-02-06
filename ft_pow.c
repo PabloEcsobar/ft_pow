@@ -6,7 +6,7 @@
 /*   By: blackrider <blackrider@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/31 20:24:51 by blackrider        #+#    #+#             */
-/*   Updated: 2024/02/06 11:05:25 by blackrider       ###   ########.fr       */
+/*   Updated: 2024/02/06 11:14:00 by blackrider       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -92,7 +92,9 @@ double	pow_float(double num, double deg)
 	{
 		deg = (deg - (int)deg) * 10;
 		root *= 10;
-		deg = round_num(deg);
+		tmp = ft_abs(deg - round_num(deg));
+		if (tmp && tmp < 0.000001)
+			++deg;
 		tmp = find_cmndv(deg, root);
 		res *= find_nearestr(pow_int(num, deg / (double)tmp), root / tmp);
 	}
