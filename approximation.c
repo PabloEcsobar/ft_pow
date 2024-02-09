@@ -6,7 +6,7 @@
 /*   By: blackrider <blackrider@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/01 14:39:21 by blackrider        #+#    #+#             */
-/*   Updated: 2024/02/06 22:42:40 by blackrider       ###   ########.fr       */
+/*   Updated: 2024/02/09 15:04:26 by blackrider       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,8 +65,8 @@ int	*dennum(double num)
 	arr[1] = 1;
 	while (arr[1] < MAXNUM && ft_abs(num - (int)num) > PRECISION)
 	{
-		num *= DEC;
-		arr[1] *= DEC;
+		num *= FTPOW_DEC;
+		arr[1] *= FTPOW_DEC;
 	}
 	tmp = find_cmndv(num, arr[1]);
 	arr[0] = round_num(num) / tmp;

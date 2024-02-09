@@ -6,17 +6,16 @@
 /*   By: blackrider <blackrider@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/31 21:00:56 by blackrider        #+#    #+#             */
-/*   Updated: 2024/02/06 22:43:12 by blackrider       ###   ########.fr       */
+/*   Updated: 2024/02/09 15:04:24 by blackrider       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #pragma once
-
 #define MIN_DEV 1
 #define DBL_MAX_ROOT_TEN 6690699980388652205836230197248.0
 #define DBL_MAX_ROOT_HNDR 1209.336485
 #define PRECISION 0.0000001
-#define DEC 10
+#define FTPOW_DEC 10
 #define MAXNUM 1000000
 
 double	ft_pow(double num, double deg);
