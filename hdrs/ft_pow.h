@@ -3,14 +3,15 @@
 /*                                                        :::      ::::::::   */
 /*   ft_pow.h                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: blackrider <blackrider@student.42.fr>      +#+  +:+       +#+        */
+/*   By: Pablo Escobar <sataniv.rider@gmail.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/31 21:00:56 by blackrider        #+#    #+#             */
-/*   Updated: 2024/02/09 15:04:24 by blackrider       ###   ########.fr       */
+/*   Updated: 2024/08/18 21:02:47 by Pablo Escob      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #pragma once
+
 #define MIN_DEV 1
 #define DBL_MAX_ROOT_TEN 6690699980388652205836230197248.0
 #define DBL_MAX_ROOT_HNDR 1209.336485
@@ -19,17 +20,17 @@
 #define MAXNUM 1000000
 
 double	ft_pow(double num, double deg);
-double	approx_one(double num, int deg);
-double	approx_pow(double num, int deg);
-double	pow_int(double num, int deg);
+double	approx_one(double num, long deg);
+double	approx_pow(double num, long deg);
+double	pow_long(double num, long deg);
 double	pow_float(double num, double deg);
 double	newtroot(double num, double deg, double approx);
 ////////////////////////TOOLS\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\/
-int		round_num(double num);
+long	round_num(double num);
 double	ft_abs(double num);
-double	find_nearestr(double num, int root);
-int		isprime(int x);
-int		find_cmndv(int deg, int root);
-double	root_av(double num, double deg, int root);
-int		*dennum(double num);
+double	find_nearestr(double num, long root);
+long	isprime(long x);
+long	find_cmndv(long deg, long root);
+double	root_av(double num, double deg, long root);
+long	*dennum(double num);
 double	numlesone(double num, double deg);

@@ -3,20 +3,20 @@
 /*                                                        :::      ::::::::   */
 /*   tools.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: blackrider <blackrider@student.42.fr>      +#+  +:+       +#+        */
+/*   By: Pablo Escobar <sataniv.rider@gmail.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/01 14:33:30 by blackrider        #+#    #+#             */
-/*   Updated: 2024/02/04 00:55:22 by blackrider       ###   ########.fr       */
+/*   Updated: 2024/08/18 21:22:17 by Pablo Escob      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_pow.h"
+#include "../hdrs/ft_pow.h"
 
-int	round_num(double num)
+long	round_num(double num)
 {
-	if (num - (int)num < 0.5)
-		return ((int)num);
-	return ((int)num + 1);
+	if (num - (long)num < 0.5)
+		return ((long)num);
+	return ((long)num + 1);
 }
 
 double	ft_abs(double num)
@@ -26,9 +26,9 @@ double	ft_abs(double num)
 	return (num);
 }
 
-int	isprime(int x)
+long	isprime(long x)
 {
-	int	num;
+	long	num;
 
 	if (x < 2)
 		return (0);
@@ -42,10 +42,10 @@ int	isprime(int x)
 	return (num);
 }
 
-int	find_cmndv(int deg, int root)
+long	find_cmndv(long deg, long root)
 {
-	int	max;
-	int	i;
+	long	max;
+	long	i;
 
 	if (!deg)
 		return (1);
@@ -62,7 +62,7 @@ int	find_cmndv(int deg, int root)
 	return (max);
 }
 
-double	root_av(double num, double deg, int root)
+double	root_av(double num, double deg, long root)
 {
 	while (ft_abs(deg - round_num(deg)) > 0.0000001)
 	{

@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   app.c                                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: blackrider <blackrider@student.42.fr>      +#+  +:+       +#+        */
+/*   By: Pablo Escobar <sataniv.rider@gmail.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/01 15:06:58 by blackrider        #+#    #+#             */
-/*   Updated: 2024/02/06 22:43:33 by blackrider       ###   ########.fr       */
+/*   Updated: 2024/08/18 21:26:46 by Pablo Escob      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_pow.h"
+#include "hdrs/ft_pow.h"
 #include <stdio.h>
 #include <limits.h>
 #include <float.h>
@@ -43,10 +43,9 @@ int		round_sct(double x)
 
 int main(void)
 {
-	double	x;
+	// double	x;
 
-
-	for (double i = 0; i < 5; i += 0.01)
+	for (double i = 0; i < 37; ++i)
 		printf("result of ft_pow(%f, %f): %f\n", i, 0.5, ft_pow(i, 0.5));
 
 	// printf("DOUBLE MAX: %f\n10 root of double max: %f\n", __DBL_MAX__, pow(__DBL_MAX__, 0.001));
