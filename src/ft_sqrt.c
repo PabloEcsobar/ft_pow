@@ -6,11 +6,11 @@
 /*   By: Pablo Escobar <sataniv.rider@gmail.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/19 19:33:41 by Pablo Escob       #+#    #+#             */
-/*   Updated: 2024/08/19 19:36:21 by Pablo Escob      ###   ########.fr       */
+/*   Updated: 2024/08/19 19:38:35 by Pablo Escob      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../hdrs/pow.h"
+#include "../hdrs/ft_pow.h"
 
 double	ft_sqrt(double num)
 {
