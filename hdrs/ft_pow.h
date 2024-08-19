@@ -6,7 +6,7 @@
 /*   By: Pablo Escobar <sataniv.rider@gmail.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/31 21:00:56 by blackrider        #+#    #+#             */
-/*   Updated: 2024/08/19 18:25:21 by Pablo Escob      ###   ########.fr       */
+/*   Updated: 2024/08/19 18:53:42 by Pablo Escob      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,3 +15,4 @@
 double	ft_pow(double num, double deg);
 ////////////////////////TOOLS\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\/
 long	round_num(double num);
+long	isprime(long x);
