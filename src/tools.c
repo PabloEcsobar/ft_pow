@@ -6,11 +6,11 @@
 /*   By: Pablo Escobar <sataniv.rider@gmail.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/01 14:33:30 by blackrider        #+#    #+#             */
-/*   Updated: 2024/08/18 21:22:17 by Pablo Escob      ###   ########.fr       */
+/*   Updated: 2024/08/19 18:23:16 by Pablo Escob      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../hdrs/ft_pow.h"
+#include "../hdrs/pow.h"
 
 long	round_num(double num)
 {

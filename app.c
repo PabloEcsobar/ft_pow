@@ -6,11 +6,11 @@
 /*   By: Pablo Escobar <sataniv.rider@gmail.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/01 15:06:58 by blackrider        #+#    #+#             */
-/*   Updated: 2024/08/18 21:26:46 by Pablo Escob      ###   ########.fr       */
+/*   Updated: 2024/08/19 18:25:06 by Pablo Escob      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "hdrs/ft_pow.h"
+#include "hdrs/pow.h"
 #include <stdio.h>
 #include <limits.h>
 #include <float.h>

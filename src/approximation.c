@@ -6,11 +6,11 @@
 /*   By: Pablo Escobar <sataniv.rider@gmail.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/01 14:39:21 by blackrider        #+#    #+#             */
-/*   Updated: 2024/08/18 21:22:44 by Pablo Escob      ###   ########.fr       */
+/*   Updated: 2024/08/19 18:23:03 by Pablo Escob      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../hdrs/ft_pow.h"
+#include "../hdrs/pow.h"
 #include <stdlib.h>
 
 double	approx_one(double num, long deg)
