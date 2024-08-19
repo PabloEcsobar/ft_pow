@@ -6,18 +6,19 @@
 /*   By: Pablo Escobar <sataniv.rider@gmail.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/19 18:22:21 by Pablo Escob       #+#    #+#             */
-/*   Updated: 2024/08/19 18:23:48 by Pablo Escob      ###   ########.fr       */
+/*   Updated: 2024/08/19 19:35:58 by Pablo Escob      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #pragma once
 
 #define MIN_DEV 1
-#define DBL_MAX_ROOT_TEN 6690699980388652205836230197248.0
-#define DBL_MAX_ROOT_HNDR 1209.336485
-#define PRECISION 0.0000001
-#define FTPOW_DEC 10
-#define MAXNUM 1000000
+#define DBL_MAX_ROOT_TEN	6690699980388652205836230197248.0
+#define DBL_MAX_ROOT_HNDR	1209.336485
+#define PRECISION			0.0000001
+#define FTPOW_DEC			10
+#define MAXNUM				1000000
+#define C_SQRT				0.5
 
 double	ft_pow(double num, double deg);
 double	approx_one(double num, long deg);
