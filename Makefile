@@ -6,7 +6,7 @@
 #    By: Pablo Escobar <sataniv.rider@gmail.com>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/08/18 21:03:51 by Pablo Escob       #+#    #+#              #
-#    Updated: 2024/08/18 21:30:18 by Pablo Escob      ###   ########.fr        #
+#    Updated: 2024/08/28 17:27:17 by Pablo Escob      ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -45,6 +45,7 @@ re: fclean all
 
 $(LIBNAME): $(OBJ)
 	ar -rc $(LIBNAME) $(OBJ)
+	ranlib $(LIBNAME)
 
 $(OBJDIR)/%.o: $(SRCDIR)/%.c
 	mkdir -p $(OBJDIR)
